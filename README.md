@@ -3,10 +3,13 @@
 [![license](https://img.shields.io/npm/l/serverless-offline.svg?style=flat-square)](#license)
 [![build status](https://img.shields.io/github/actions/workflow/status/distinction-dev/serverless-exports/release.yml?branch=master)](https://github.com/distinction-dev/serverless-exports/actions)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/distinction-dev/serverless-exports/total)
+![GitHub Release](https://img.shields.io/github/v/release/distinction-dev/serverless-exports)
+
 
 This repository is used to create a serverless plugin that makes writing Output for Resources in a developer friendly way inside serverless.yml file
 
-### Install
+### 📦 Install
 ```sh
 npm i -D serverless-exports
 # or
@@ -47,6 +50,5 @@ Resources:
 ```
 `myKey` will be available in your stack outputs that you can refer to
 
-**NOTE:**
-Duplicate keys declared across the `Outputs` and all the `Resources` will be rejected
+> **Note**: Duplicate keys declared across the `Outputs` and all the `Resources` will be rejected
 
