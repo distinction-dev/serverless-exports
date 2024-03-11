@@ -1,0 +1,66 @@
+{
+  "name": "serverless-exports",
+  "version": "1.0.0",
+  "main": "dist/src/index.js",
+  "private": true,
+  "repository": "git@github.com:distinction-dev/serverless-exports.git",
+  "author": {
+    "name": "Distinction Dev",
+    "url": "https://github.com/distinction-dev"
+  },
+  "license": "MIT",
+  "keywords": [
+    "serverless",
+    "serverless plugin",
+    "plugin",
+    "serverless exports",
+    "serverless plugin exports"
+  ],
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ],
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write",
+      "eslint"
+    ]
+  },
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "tsc -p tsconfig.build.json",
+    "lint": "eslint .",
+    "precommit": "npm run build && npm run test",
+    "test": "jest",
+    "clean": "rimraf dist",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.25",
+    "@types/serverless": "^3.12.22",
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-jest": "^27.9.0",
+    "husky": "^9.0.11",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "semantic-release": "^23.0.2",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.2"
+  },
+  "engines": {
+    "yarn": ">=1.22.21"
+  },
+  "dependencies": {
+    "semver": "^7.6.0"
+  },
+  "peerDependencies": {
+    "serverless": "3"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "plugins": ["jest"],
+  "env": {
+    "node": true,
+    "browser": true,
+    "amd": true,
+    "jest/globals": true,
+  },
+  "rules": {
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error",
+    "array-bracket-spacing": ["error", "always"],
+    "block-spacing": ["error"],
+    "camelcase": ["error", { "allow": ["(_[0-9]+)+$"] }],
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "curly": ["error", "all"],
+    "eol-last": ["error", "unix"],
+    "no-extra-parens": ["warn", "all", { "conditionalAssign": false }],
+    "no-multiple-empty-lines": [
+      "error",
+      { "max": 2, "maxBOF": 1, "maxEOF": 1 }
+    ],
+    "quotes": ["error", "single", "avoid-escape"]
+  },
+  "extends": ["eslint:recommended", "prettier/@typescript-eslint"],
+  "overrides": [
+    {
+      "files": ["**/*.ts"],
+      "parser": "@typescript-eslint/parser",
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+      ],
+      "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+      },
+      "rules": {
+        // 2 space indent, no tabs
+        "indent": "off",
+        "@typescript-eslint/indent": ["error", 2],
+
+        "quotes": "off",
+        "@typescript-eslint/quotes": ["error", "single", "avoid-escape"],
+
+        // warn but allow for extra parentheses
+        "no-extra-parens": "off",
+        "@typescript-eslint/no-extra-parens": [
+          "warn",
+          "all",
+          { "conditionalAssign": false },
+        ],
+
+        // stylistically it is not all that bad to be verbose, unnecessary != wrong
+        "@typescript-eslint/no-inferrable-types": "off",
+
+        // non null assertion should be disallowed, not just a warning
+        "@typescript-eslint/no-non-null-assertion": "error",
+      },
+    },
+  ],
+}
